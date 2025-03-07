@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import searchIcon from "../images/search.png";
+import { FaSearch } from "react-icons/fa";
 
 const SearchBar = ({ fetchWeather }) => {
   const [city, setCity] = useState("");
@@ -12,10 +12,10 @@ const SearchBar = ({ fetchWeather }) => {
   };
 
   return (
-    <div className="flex items-center mb-6">
+    <div className="flex items-center w-full">
       <input
         type="text"
-        className="w-full p-3 text-lg rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-4 text-lg rounded-l-md border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Enter City Name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
@@ -23,9 +23,9 @@ const SearchBar = ({ fetchWeather }) => {
       />
       <button
         onClick={handleSearch}
-        className="bg-blue-600 text-white p-3 rounded-r-lg"
+        className="p-4 bg-gray-700 border border-gray-600 rounded-r-md flex items-center justify-center hover:bg-gray-600 transition-all duration-300"
       >
-        <img className="w-5 h-5" src={searchIcon} alt="Search" />
+        <FaSearch className="text-white text-xl" />
       </button>
     </div>
   );

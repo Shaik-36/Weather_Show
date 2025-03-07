@@ -28,9 +28,27 @@ const App = () => {
     }
   };
 
+  const getBackgroundClass = () => {
+    if (!weatherData) return "bg-gray-900"; // Default Dark Gray
+
+    const weatherCondition = weatherData.weather[0].main.toLowerCase();
+
+    const backgrounds = {
+      clear: "bg-gray-800", // Sunny
+      clouds: "bg-gray-700", // Cloudy
+      rain: "bg-gray-600", // Rainy
+      drizzle: "bg-gray-700", // Light Rain
+      thunderstorm: "bg-gray-800", // Storm
+      snow: "bg-gray-500", // Snow
+      mist: "bg-gray-700", // Fog
+    };
+
+    return backgrounds[weatherCondition] || "bg-gray-900";
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600 flex flex-col items-center justify-center py-10">
-      <div className="w-full max-w-md p-5 bg-white rounded-lg shadow-xl">
+    <div className={`min-h-screen flex flex-col items-center justify-center transition-all duration-700 ${getBackgroundClass()}`}>
+      <div className="w-full p-10 bg-gray-800 bg-opacity-95 rounded-lg shadow-xl max-w-4xl">
         <SearchBar fetchWeather={fetchWeather} />
         {error && <ErrorMessage />}
         {weatherData && <WeatherCard data={weatherData} />}

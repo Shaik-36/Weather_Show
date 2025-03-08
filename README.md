@@ -5,6 +5,10 @@ A modern weather application that fetches real-time weather data using an API an
 ## 🚀 Live Demo
 🔗 **[Check out the Weather App](https://weathertoday-psi.vercel.app/)**
 
+
+<img width="807" alt="image" src="https://github.com/user-attachments/assets/fec71dcf-f106-4c10-9caa-74cc3426093a" />
+
+
 ## 📌 Features
 - 🌍 Search for weather updates of any city worldwide.
 - ☁️ Displays current weather conditions, temperature, humidity, pressure, wind speed, and visibility.
